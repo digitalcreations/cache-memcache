@@ -26,6 +26,7 @@ class Cache implements \DC\Cache\ICache {
     private function connect() {
         if ($this->isConnected) return;
         $this->memcache->connect($this->configuration->getHost(), $this->configuration->getPort());
+        $this->isConnected = true;
     }
 
     /**
